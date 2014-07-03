@@ -1,0 +1,66 @@
+{include:hidden_js}
+{include:toggle_js}
+<h1>{lang:folder_name}</h1>
+<div class="col-sm-6">
+	<div class="well">
+		<h4>{lang:storage_percentage}</h4>
+		<div class="progress">
+			<div class="progress-bar progress-bar-danger" style="width: {image:messages_graph:width}px;  height:{image:messages_graph:height}px;"></div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-6">
+	<div class="list-group">
+		<a class="list-group-item" href='{path:erase_messages}' onclick='if( ! confirm("{lang:erase_popup}")) return false;'>{lang:erase_messages}</a>
+		<div class="list-group-item">{lang:switch_folder} {include:folder_pulldown:change}</div>
+	</div>
+</div>
+{form:form_declaration:modify_messages}
+{paginate}
+	{pagination_links}
+	<ul class="pagination">
+		{first_page}
+		<li><a href="{pagination_url}" class="page-first">«</a></li>
+		{/first_page}
+		{page}
+		<li class="{if current_page}active{/if}"><a href="{pagination_url}">{pagination_page_number}</a></li>
+		{/page}
+		{last_page}
+		<li><a href="{pagination_url}" class="page-last">»</a></li>
+		{/last_page}
+	</ul>
+	{/pagination_links}
+{/paginate}
+{include:folder_pulldown:move}
+{include:folder_pulldown:copy}
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>{lang:message_subject}</th>
+			<th>{lang:message_sender}</th>
+			<th>{lang:message_date}</th>
+			<th><input class='checkbox' type='checkbox' name='toggleflag' value='' onclick="toggle(this);"></th>
+		</tr>
+	</thead>
+	<tbody>
+		{include:folder_rows}
+	</tbody>
+</table> 
+<span class="help-block">{lang:storage_status}</span>
+<div class="well" style="text-align: right;">{form:copy_button}{form:move_button}{form:delete_button}</div>
+{paginate}
+	{pagination_links}
+	<ul class="pagination">
+		{first_page}
+		<li><a href="{pagination_url}" class="page-first">«</a></li>
+		{/first_page}
+		{page}
+		<li class="{if current_page}active{/if}"><a href="{pagination_url}">{pagination_page_number}</a></li>
+		{/page}
+		{last_page}
+		<li><a href="{pagination_url}" class="page-last">»</a></li>
+		{/last_page}
+	</ul>
+	{/pagination_links}
+{/paginate}
+</form>

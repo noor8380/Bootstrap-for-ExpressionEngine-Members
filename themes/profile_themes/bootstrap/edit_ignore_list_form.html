@@ -1,0 +1,17 @@
+{include:toggle_js}
+{if success_message}<div class='block'><h2 class="block-title">{lang:message}</h2></div>{/if}
+{form:form_declaration}
+<h1>{lang:ignore_list}</h1>
+<table class="table table-striped table-hover ">
+	<thead>
+		<tr>
+			<th>{lang:screen_name}</th>
+			<th><input class='checkbox' type='checkbox' name='toggleflag' value='' onclick="toggle(this);"></th>
+		</tr>
+	</thead>
+	<tbody>
+	{include:edit_ignore_list_rows}
+	</tbody>
+</table> 
+<div style="text-align: right;">{form:add_button}&nbsp;&nbsp;{form:delete_button}</div>
+</form>

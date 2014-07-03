@@ -1,0 +1,32 @@
+<h1>{lang:edit_avatar}</h1>
+{form_declaration}
+<div class="well">
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">{lang:current_avatar}</label>
+			<div class="col-sm-10">
+				{if avatar}<img src="{path:avatar_image}" border="0" width="{avatar_width}" height="{avatar_height}" title="{lang:my_avatar}" alt="{lang:my_avatar}">{/if}
+				{if no_avatar}{lang:no_avatar}{/if}
+			</div>
+		</div>
+		{if installed_avatars}
+			<div class="form-group">
+				<label class="col-sm-2 control-label">{lang:choose_installed_avatar}</label>
+				<div class="col-sm-10">{include:avatar_folder_list}</div>
+			</div>
+		{/if}
+		{if can_upload_avatar}
+			<div class="form-group">
+				<label class="col-sm-2 control-label">{lang:upload_an_avatar}</label>
+				<div class="col-sm-10">
+					<input type="file" name="userfile" size="20" class="form-control">
+					<span class="help-block">{lang:max_image_size}<br />{lang:allowed_image_types}</span>
+				</div>
+			</div>
+		{/if}
+		<div class="form-group">
+			<div class="col-sm-10 col-sm-offset-2">{if can_upload_avatar}<button type="submit" class="btn btn-default" value="{lang:upload_avatar}" name="submit">{lang:upload_avatar}</button>{/if} &nbsp;&nbsp;<button type="submit" class="btn btn-danger" value="{lang:remove_avatar}" name="remove">{lang:remove_avatar}</button></div>
+		</div>
+	</div>
+</div>
+</form>

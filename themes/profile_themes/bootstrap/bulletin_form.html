@@ -1,0 +1,21 @@
+{form:form_declaration:sending_bulletin}
+{if message}<div class="alert alert-dismissable alert-success"><p>{include:message}</p></div>{/if}
+	<h1>{lang:send_bulletin}</h1>
+	<div class="form-group">
+		<label class="control-label" for="group_id">{lang:member_group}</label>
+		<select name="group_id" id="group_id" class="form-control">{group_id_options}</select>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="bulletin_message">{lang:bulletin_message}</label>
+		<textarea name='bulletin_message' id="bulletin_message" class="form-control" rows='10' cols='90'></textarea>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="bulletin_date">{lang:bulletin_date}</label>
+		<input type="text" class="form-control" name="bulletin_date" id="bulletin_date" value="{input:bulletin_date}" maxlength="50">
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="bulletin_expires">{lang:bulletin_expires}</label>
+		<input type="text" class="form-control" name="bulletin_expires" id="bulletin_expires" value="{input:bulletin_expires}" maxlength="50">
+	</div>	
+	<button type="submit" class="btn btn-default" value="{lang:submit}">{lang:submit}</button>
+</form>

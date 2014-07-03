@@ -1,0 +1,34 @@
+{form:form_declaration:view_message}
+{include:hidden_js}
+{include:folder_pulldown:move}
+{include:folder_pulldown:copy}
+<h1>{lang:private_message}</h1>
+<div class="well">
+	<div class="form-group">
+		<label class="control-label">{lang:message_sender}</label>
+		{include:sender}
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:message_subject}</label>
+		{include:subject}
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:message_date}</label>
+		{include:date}
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:message_recipients}</label>
+		{include:recipients}
+	</div>
+	{if show_cc}<div class="form-group">
+		<label class="control-label">{lang:cc}</label>
+		{include:cc}
+	</div>{/if}
+	{if attachments_exist}<div class="form-group">
+		<label class="control-label">{lang:attachments}</label>
+		{include:attachment_links}
+	</div>{/if}
+	{include:parsed_message}
+	<div style="text-align:right;">{form:reply_button} {form:reply_all_button} {form:forward_button} {form:move_button} {form:copy_button} {form:delete_button}</div>
+</div>
+</form>

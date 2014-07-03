@@ -1,0 +1,42 @@
+{if logged_in}{redirect="member/profile"}{/if}
+{form_declaration}
+<div id="profile_main" class="col-md-8">
+	<h1>Login to Gamnesia</h1>
+	<div class="well">
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">{lang:username}</label>
+				<div class="col-sm-10"><input type="text" style="width:80%" class="form-control" name="username" value="" maxlength="50"></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">{lang:password}</label>
+				<div class="col-sm-10">
+					<input type="password" style="width:80%" class="form-control" name="password" value="" maxlength="40" autocomplete="off">
+					<div class="checkbox">
+						<label><input type="checkbox" name="auto_login" value="1" checked="checked"> {lang:auto_login}</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="anon" value="1" checked="checked"> {lang:show_name}</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-10 col-sm-offset-2">
+					<button type="submit" class="btn btn-default" value="{lang:submit}">{lang:submit}</button>
+					<span class="help-block"><a href="{path:forgot}">{lang:forgot_password}</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="profile_sidebar" class="col-md-4">
+	<div class="panel panel-info">
+		<div class="panel-heading">Register</div>
+		<div class="panel-body">
+			<p>Gamnesia membership is currently in beta testing and available only to staff members and selected invitees from our community.</p>
+			<p>Please stay tuned for when we open registration to the public!</p>
+			<a style="display:none;" href="{path:register}">{lang:member_registration}</a>
+		</div>
+	</div>
+</div>
+</form>		

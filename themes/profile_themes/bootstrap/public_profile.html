@@ -1,0 +1,59 @@
+	<div id="profile_main" class="col-md-8">
+		<div style="background:url({path:avatar_url}) top left no-repeat" class="profile_header">
+			<h2>{name}</h2>
+			<h6>{lang:member_group} {member_group}</h6>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				About {name}
+				<div class="profile_social">
+					{if linkedin}<a href="http://www.linkedin.com/in/{linkedin}" rel="nofollow" target="_blank"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/linkedin_16.png" alt="Linkedin" /></a>{/if}
+					{if tumblr}<a href="http://{tumblr}.tumblr.com" rel="nofollow" target="_blank"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/tumblr_16.png" alt="Tumblr" /></a>{/if}
+					{if googleplus}<a href="https://plus.google.com/{googleplus}" rel="nofollow" target="_blank"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/google_16.png" alt="Google+" /></a>{/if}
+					{if twitter}<a href="http://twitter.com/{twitter}" rel="nofollow" target="_blank"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/twitter_16.png" alt="Twitter" /></a>{/if}
+					{if facebook}<a href="http://www.facebook.com/{facebook}" rel="nofollow" target="_blank"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/facebook_16.png" alt="Facebook" /></a>{/if}
+				</div>
+			</div>
+			<div class="panel-body">
+				{if bio != ''}{bio}{/if}
+				{if bio == ''}This user has not filled out their profile yet.{/if}
+			</div>
+		</div>
+		{exp:channel:entries channel="news|reviews|articles" author_id="{member_id}" limit="10" disable="categories|category_fields" site="site_gamnesia|site_zeldainformer|site_freakkingdom" status="Gamnesia|ZeldaInformer|ALL|FreakKingdom" dynamic="no"}
+		{if count == "1"}
+			<h4>Latest Posts by {name}</h4>
+			<div class="list-group">
+		{/if}
+				<a class="list-group-item" href="{comment_url_title_auto_path}">{title}</a>
+		{if count == total_results}
+				<a class="list-group-item" style="font-weight: bold; text-align: right; display: none;" href="#">Show all posts by {name}</a>
+			</div>
+		{/if}
+		{/exp:channel:entries}
+	</div>
+	<div id="profile_sidebar" class="col-md-4">
+		{if photo}
+			<div class="profile_photo well">
+				<img src="{path:photo_url}" width="{photo_width}" height="{photo_height}" title="{name}" class="img-responsive" />
+			</div>
+		{/if}
+		<h4>Basic Information</h4>
+		<ul class="list-group">
+					{if location}<li class="list-group-item"><b>{lang:location}:</b> {location}</li>{/if}
+					{if occupation}<li class="list-group-item"><b>{lang:occupation}:</b> {occupation}</li>{/if}
+					{if interests}<li class="list-group-item"><b>{lang:interests}:</b> {interests}</li>{/if}
+					{if birthday}<li class="list-group-item"><b>{lang:birthday}:</b> {birthday}</li>{/if}
+					<li class="list-group-item"><b>{lang:member_group}</b> {member_group}</li>
+		</ul>
+		<h4>Contact</h4>
+		<ul class="contact list-group">
+					{if url}<li class="list-group-item"><span class="glyphicon glyphicon-home"></span>&nbsp; <a href="{url}" rel="nofollow" target="_blank">{url}</a></li>{/if}
+					{if skype}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/skype_16.png" alt="Skype" />{skype}</li>{/if}
+					{if aol_im}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/aim_16.png" alt="AOL IM" />{aol_im}</li>{/if}
+					{if yahoo_im}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/yahoo_16.png" alt="Yahoo! Messenger" />{yahoo_im}</li>{/if}
+					{if msn_im}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/windows_16.png" alt="Windows Messenger" />{msn_im}</li>{/if}
+					{if icq}<li class="list-group-item"><b>{lang:icq}:</b> {icq}</li>{/if}
+		</ul>
+	</div>
+	</div></div>
+{global_footer}

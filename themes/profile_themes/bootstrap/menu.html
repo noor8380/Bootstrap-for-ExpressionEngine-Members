@@ -1,0 +1,16 @@
+<h4>{lang:personal_settings}</h4>
+<div class="list-group">
+	<a class="list-group-item" href='{path:profile}'>{lang:edit_profile}</a>
+	{if enable_avatars}<a class="list-group-item" href='{path:avatar}'>{lang:edit_avatar}</a>{/if}
+	{if enable_photos}<a class="list-group-item" href='{path:photo}'>{lang:edit_photo}</a>{/if}
+	<a class="list-group-item" href='{path:email}'>{lang:email_settings}</a>
+	<a class="list-group-item" href='{path:username}'>{lang:username_and_password}</a>
+	<a class="list-group-item" href='{path:edit_preferences}'>{lang:edit_preferences}</a>
+	{if allow_localization}<a class="list-group-item" href='{path:localization}'>{lang:localization}</a>{/if}
+</div>
+<h4>{lang:utilities}</h4>
+<div class="list-group">
+	<a class="list-group-item" href='{path:subscriptions}' >{lang:edit_subscriptions}</a>
+	<a class="list-group-item" href='{path:ignore_list}' >{lang:ignore_list}</a>
+</div>
+{include:messages_menu}

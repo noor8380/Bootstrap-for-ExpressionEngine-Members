@@ -1,0 +1,37 @@
+<script type="text/javascript"> 
+<!--
+
+function toggle(thebutton)
+{
+	if (thebutton.checked) 
+	{
+	   val = true;
+	}
+	else
+	{
+	   val = false;
+	}
+				
+	var len = document.target.elements.length;
+
+	for (var i = 0; i < len; i++) 
+	{
+		var button = document.target.elements[i];
+		
+		var name_array = button.name.split("["); 
+		
+		if (name_array[0] == "toggle") 
+		{
+			button.checked = val;
+		}
+	}
+	
+	document.target.toggleflag.checked = val;
+}
+//-->
+</script>
+
+<form method="post" action="{path:update_subscriptions}" name="target">
+<h1>{lang:subscriptions}</h1>
+{subscription_results}
+</form>

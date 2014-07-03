@@ -1,0 +1,24 @@
+<h1>{lang:edit_photo}</h1>
+{form_declaration}
+<div class="well">
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">{lang:current_photo}</label>
+			<div class="col-sm-10">
+				{if photo}<img src="{path:member_photo}" border="0" width="{photo_width}" height="{photo_height}" title="{lang:my_photo}" alt="{lang:my_photo}">{/if}
+				{if no_photo}{lang:no_photo_exists}{/if}
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">{lang:upload_photo}</label>
+			<div class="col-sm-10">
+				<input type="file" name="userfile" size="20" class="form-control">
+				<span class="help-block">{lang:max_image_size}<br />{lang:allowed_image_types}</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-10 col-sm-offset-2"><button type="submit" class="btn btn-default" value="{lang:upload_photo}" name="submit">{lang:upload_photo}</button> &nbsp;&nbsp;<button type="submit" class="btn btn-danger" value="{lang:remove_photo}" name="remove">{lang:remove_photo}</button></div>
+		</div>
+	</div>
+</div>
+</form>

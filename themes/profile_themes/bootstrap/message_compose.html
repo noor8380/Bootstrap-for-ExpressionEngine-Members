@@ -1,0 +1,107 @@
+{include:hidden_js}
+{include:search_js}
+{include:spellcheck_js}
+{include:text_counter_js}
+{include:dynamic_address_book}
+<!-- Hidden Emoticon Popup -->
+<div id="emoticons" class="tableCellOne" style="border: 1px solid #666; position:absolute;visibility:hidden;">
+<script type="text/javascript"> 
+//<![CDATA[
+function add_smiley(smiley)
+{
+	taginsert('other', " " + smiley + " ", '');
+	//document.getElementById('submit_message').body.value += " " + smiley + " ";
+	emoticonspopup.hidePopup('emoticons');
+	document.getElementById('submit_message').body.focus();
+}
+//]]>
+</script>
+<form method='post' action='' >
+<table border='0' cellspacing='0' cellpadding='10' style='width:200px'>
+{include:emoticons}
+</table>
+</form>
+<div class="defaultCenter">
+<p><a href="" onclick="emoticonspopup.hidePopup(); return false;">{lang:close_window}</a></p>
+</div>
+</div>
+<script type="text/javascript"> 
+//<![CDATA[
+var emoticonspopup = new PopupWindow("emoticons");
+emoticonspopup.offsetY=0;
+emoticonspopup.offsetX=0;
+emoticonspopup.autoHide();
+//]]>
+</script>
+<!-- End Hidden Emoticon Popup -->
+{include:submission_error}
+{include:preview_message}
+{form:form_declaration:messages}
+<h1>{lang:new_message}</h1>
+<div class="well">
+	<div class="form-group">
+		<label class="control-label" for="recipients">{lang:message_recipients} &nbsp;{include:search:recipients}</label>
+		<textarea name='recipients' id='recipients' class='form-control' rows='2' cols='90' onkeyup='buddy_list(this.name);'>{input:recipients}</textarea><div id="recipients_buddies"></div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="cc">{lang:cc} &nbsp;{include:search:cc}</label>
+		<textarea name='cc' id='cc' class='form-control' rows='2' cols='90' onkeyup='buddy_list(this.name);'>{input:cc}</textarea><div id="cc_buddies"></div>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="subject">{lang:message_subject}</label>
+		<input type="text" class="form-control" id="subject" name="subject" value="{input:subject}">
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:guided}&nbsp;<input type='radio' name='mode' value='guided' onclick='setmode(this.value)'> {lang:normal}&nbsp;<input type='radio' name='mode' value='normal' onclick='setmode(this.value)' checked='checked'></label>
+		{include:html_formatting_buttons}
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:font_formatting}</label>
+		<select name="size" class="select" onchange="selectinsert(this, 'size')" >
+			<option value="0">{lang:size}</option>
+			<option value="1">{lang:small}</option>
+			<option value="3">{lang:medium}</option>
+			<option value="4">{lang:large}</option>
+			<option value="5">{lang:very_large}</option>
+			<option value="6">{lang:largest}</option>
+		</select>
+		<select name="color" class="select" onchange="selectinsert(this, 'color')">
+			<option value="0">{lang:color}</option>
+			<option value="blue">{lang:blue}</option>
+			<option value="green">{lang:green}</option>
+			<option value="red">{lang:red}</option>
+			<option value="purple">{lang:purple}</option>
+			<option value="orange">{lang:orange}</option>
+			<option value="yellow">{lang:yellow}</option>
+			<option value="brown">{lang:brown}</option>
+			<option value="pink">{lang:pink}</option>
+			<option value="gray">{lang:grey}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="body">{lang:message}</label>
+		<textarea name='body' id="body" class='form-control' rows='20' cols='90' onkeydown='text_counter();' onkeyup='text_counter();'>{input:body}</textarea><br><a href='javascript:void(0);' onclick='dynamic_emoticons();return false;'>{lang:smileys}</a>
+	</div>
+	<div class="form-group">
+		<label class="control-label" for="charsleft">Remaining Characters</label>
+		<input type="text" class="form-control" name="charsleft" id="charsleft" size="5" maxlength="4" value="{lang:max_chars}" readonly="readonly">
+	</div>
+	<div class="form-group">
+		<label class="control-label">{lang:message_options}</label><br>
+		<input type="checkbox" name="sent_copy" value="y" {input:sent_copy_checked}> {lang:sent_copy}<br>
+		<input type="checkbox" name="hide_cc" value="y" {input:hide_cc_checked}> {lang:hide_cc}
+	</div>
+	{if attachments_allowed}<div class="form-group">
+		<label class="control-label" for="userfile">{lang:attachments}</label>
+		<input type="file" name="userfile" id="userfile" size="20" class="form-control">
+		<span class="help-block">{lang:max_size}&nbsp;{lang:max_file_size} {lang:kb}</span>
+	</div>{/if}
+	{if attachments_exist}<div class="form-group">
+		<label class="control-label">{lang:attachments}</label>
+		{include:attachments}
+	</div>{/if}
+	<button type="submit" class="btn" value="{lang:preview_message}" name="preview">{lang:preview_message}</button>
+	<button type="submit" class="btn" value="{lang:draft_message}" name="draft">{lang:draft_message}</button>
+	<button type="submit" class="btn btn-default" value="{lang:send_message}" name="submit">{lang:send_message}</button>
+</div>
+</form>

@@ -1,0 +1,6 @@
+<div class="well">		
+{if can_delete_bulletin}<a href='{path:delete_bulletin}' style="float: right;" class="btn btn-danger btn-sm" onclick='if( ! confirm("{lang:delete_bulletin_popup}")) return false;'>Delete Bulletin</a>{/if}
+<b>{lang:message_sender}:</b> {bulletin_sender}<br>
+<b>{lang:message_date}:</b> {bulletin_date}<br>
+{bulletin_message}
+</div>

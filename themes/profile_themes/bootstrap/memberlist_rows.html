@@ -1,0 +1,8 @@
+{exp:query sql="SELECT avatar_filename, group_id FROM exp_members WHERE member_id = '{member_id}' LIMIT 1"}
+	<tr>
+		<td>{if avatar_filename != ''}<a href="{path:profile}" title="{name}"><img src="{site_url}images/avatars/{avatar_filename}" alt="{name}"></a>{/if}</td>
+		<td><a href="{path:profile}">{name}</a></td>
+		<td>{total_combined_posts}</td>
+		<td>{exp:query sql="SELECT group_title FROM exp_member_groups WHERE group_id = '{group_id}' LIMIT 1"}{group_title}{/exp:query}</td>
+	</tr>
+{/exp:query}

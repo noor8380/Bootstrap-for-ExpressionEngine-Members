@@ -1,0 +1,76 @@
+<div id="user_registration">
+	<div class="registration_form block">
+		<h1 class="block-title">{lang:member_registration}</h1>
+		<dl>
+			<dt>{lang:username} <span class="highlight">*</span></dt>
+			<dd>
+				<input type="text" name="username" value="" maxlength="50" class="input" size="25" style="width:300px" /><br />
+				<div class="lighttext">{lang:username_length}</div>
+			</dd>
+			<div class="block-separator"></div>
+			<dt>{lang:password} <span class="highlight">*</span></dt>
+			<dd>
+				<input type="password" name="password" value="" maxlength="40" class="input" size="25" style="width:300px" autocomplete='off' /><br />
+				<div class="lighttext">{lang:password_length}</div>
+			</dd>
+			<div class="block-separator"></div>
+			<dt>{lang:password_confirm} <span class="highlight">*</span></dt>
+			<dd><input type="password" name="password_confirm" value="" maxlength="40" class="input" size="25" style="width:300px" autocomplete='off' /></dd>
+			<div class="block-separator"></div>
+			<dt>{lang:screen_name} <span class="highlight">*</span></dt>
+			<dd>
+				<input type="text" name="screen_name" value="" maxlength="50" class="input" size="25" style="width:300px" /><br />
+				<div class="lighttext">{lang:screen_name_explanation}</div>
+			</dd>
+			<div class="block-separator"></div>
+			<dt>{lang:email} <span class="highlight">*</span></dt>
+			<dd><input type="text" name="email" value="" maxlength="72" class="input" size="40" style="width:300px" /></dd>
+			<div class="block-separator"></div>
+			<dt>{lang:email_confirm} <span class="highlight">*</span></dt>
+			<dd><input type="text" name="email_confirm" value="" maxlength="72" class="input" size="40" style="width:300px" /></dd>
+			<div class="block-separator"></div>
+			<dt>{lang:url}</dt>
+			<dd><input type="text" name="url" value="" maxlength="150" class="input" size="25" style="width:300px" /></dd>
+			<div class="block-separator"></div>
+			{custom_fields}
+				<dt>{field_name} {required}<span class="highlight">*</span>{/required}</dt>
+				<dd>
+					{field}
+					{if field_description}<br /><div class="lighttext">{field_description}</div>{/if}
+				</dd>
+				<div class="block-separator"></div>
+			{/custom_fields}
+			{if captcha}
+				<dt>CAPTCHA <span class="highlight">*</span></dt>
+				<dd>
+					{captcha}<br />
+					<input type="text" name="captcha" value="" size="20" maxlength="20" style="width:140px;" />
+				</dd>
+				<div class="block-separator"></div>
+			{/if}
+			<dt>{lang:terms_of_service}</dt>
+			<dd>
+				<textarea name='rules' style='width:100%' class='textarea' rows='8' cols='90' readonly>
+				All messages posted at this site express the views of the author, and do not necessarily reflect the views of the owners and administrators of this site.
+
+				By registering at this site you agree not to post any messages that are obscene, vulgar, slanderous, hateful, threatening, or that violate any laws.   We will permanently ban all users who do so.   
+
+				We reserve the right to remove, edit, or move any messages for any reason.
+				</textarea>
+				<br /><input type='checkbox' name='accept_terms' value='y'  />&nbsp;&nbsp;<span class="alert">{lang:terms_accepted}</span>
+			</dd>
+			<div class="block-separator"></div>
+			<dt><span class="highlight">*</span> {lang:required_fields}</dt>
+			<dd><input type="submit" value="{lang:submit}" class="submit" /></dd>
+			<div class="clear"></div>
+		</dl>
+	</div>
+	<div class="registration_block block">
+		<h2 class="block-title">Why Register?</h2>
+		<div class="block-inner">
+			<p>Gamnesia membership is currently in beta testing and available only to staff members and selected invitees from our community.</p>
+			<p>Please stay tuned for when we open registration to the public!</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
