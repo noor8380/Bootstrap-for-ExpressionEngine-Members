@@ -16,8 +16,10 @@ If you are using the Multiple Site Manager and want each site to have separate t
 
 **Also**, don't forget to fill in lines 6, 7, and 8 in `html_header.html` with the full paths to your local Bootstrap files (or CDN-hosted files).
 
-###Template Snippets
+###Template Snippets and Global Variables
 You'll want to create a snippet in your EE install named `global_footer`. I've already included the references to this in the appropriate templates. You can use that snippet and the `page_header.html` file as the wrapper for the members area. Attempting to do so with the `html_footer.html` file will result in the popup functions acting all wonky. Don't blame me, this is how EE calls that shit, a future update will have some sort of workaround to turn those into proper Bootstrap modals.
+
+You'll also want to create a pair of Global Variables: `text_tos` and `text_whyregister`. The login and registration forms call these - fill in whatever your sales pitch and terms of service for your members is going to be in those snippets.
 
 ###Notes
 This is far from finished. Some of the code is sloppy since I basically just ripped this out of an existing project, and I'm still cleaning it up to be more of a "universal" distribution.
