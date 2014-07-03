@@ -44,6 +44,9 @@
 					{if interests}<li class="list-group-item"><b>{lang:interests}:</b> {interests}</li>{/if}
 					{if birthday}<li class="list-group-item"><b>{lang:birthday}:</b> {birthday}</li>{/if}
 					<li class="list-group-item"><b>{lang:member_group}</b> {member_group}</li>
+					{if forum_installed}<li class="list-group-item"><b>Forum Posts:</b> {total_forum_posts} (<a href="{site_url}forums/member_search/{member_id}/">View All</a>)</li>{/if}
+					<li class="list-group-item"><b>{lang:last_visit}:</b> {last_visit format="%M %d, %Y"}</li>
+					<li class="list-group-item"><b>{lang:join_date}:</b> {join_date format="%M %d, %Y"}</li>
 		</ul>
 		<h4>Contact</h4>
 		<ul class="contact list-group">
