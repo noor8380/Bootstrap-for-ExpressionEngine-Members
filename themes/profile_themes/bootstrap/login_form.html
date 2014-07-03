@@ -1,7 +1,7 @@
 {if logged_in}{redirect="member/profile"}{/if}
 {form_declaration}
 <div id="profile_main" class="col-md-8">
-	<h1>Login to Gamnesia</h1>
+	<h1>Login to {site_name}</h1>
 	<div class="well">
 		<div class="form-horizontal">
 			<div class="form-group">
@@ -33,9 +33,8 @@
 	<div class="panel panel-info">
 		<div class="panel-heading">Register</div>
 		<div class="panel-body">
-			<p>Gamnesia membership is currently in beta testing and available only to staff members and selected invitees from our community.</p>
-			<p>Please stay tuned for when we open registration to the public!</p>
-			<a style="display:none;" href="{path:register}">{lang:member_registration}</a>
+			{text_whyregister}
+			<a href="{path:register}">{lang:member_registration}</a>
 		</div>
 	</div>
 </div>
