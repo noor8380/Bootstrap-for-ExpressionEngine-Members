@@ -16,6 +16,8 @@ If you are using the Multiple Site Manager and want each site to have separate t
 
 **Also**, don't forget to fill in lines 6, 7, and 8 in `html_header.html` with the full paths to your local Bootstrap files (or CDN-hosted files).
 
+You should also go to line 22 of `public_profile.html` and fill in your install's channel names, site names, and statuses, otherwise the 'latest posts' loop of the profile won't work. (If you don't plan on using it, you can always remove it.)
+
 ###Template Snippets and Global Variables
 You'll want to create a snippet in your EE install named `global_footer`. I've already included the references to this in the appropriate templates. You can use that snippet and the `page_header.html` file as the wrapper for the members area. Attempting to do so with the `html_footer.html` file will result in the popup functions acting all wonky. Don't blame me, this is how EE calls that shit, a future update will have some sort of workaround to turn those into proper Bootstrap modals.
 
