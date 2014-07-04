@@ -7,10 +7,6 @@ I guess it goes without saying that this will not work without Bootstrap. You ca
 
 ###Implementation
 Upload the full contents of `/bootstrap/` to `/themes/profile_themes/`, then in your admin panel, set Bootstrap as the default theme in your global member preferences.
-```
-{exp:wiki base_path='wiki/index' wiki="INSERT WIKI SHORTNAME HERE" theme="bootstrap"}
-```
-Then just point your browser to `yoursiteurl.com/wiki/` and there you go.
 
 If you are using the Multiple Site Manager and want each site to have separate themes, just duplicate the `/bootstrap/` folder, and declare the new folder's name in that site's member preferences.
 
