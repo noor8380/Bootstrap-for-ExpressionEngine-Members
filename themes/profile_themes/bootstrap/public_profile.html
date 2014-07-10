@@ -50,6 +50,7 @@
 		</ul>
 		<h4>Contact</h4>
 		<ul class="contact list-group">
+					{if can_private_message}<li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp; <a href="{send_private_message}">{lang:send_pm}</a></li>{/if}
 					{if url}<li class="list-group-item"><span class="glyphicon glyphicon-home"></span>&nbsp; <a href="{url}" rel="nofollow" target="_blank">{url}</a></li>{/if}
 					{if skype}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/skype_16.png" alt="Skype" />{skype}</li>{/if}
 					{if aol_im}<li class="list-group-item"><img src="{theme_folder_url}site_themes/gamnesia/images/icons/aim_16.png" alt="AOL IM" />{aol_im}</li>{/if}
